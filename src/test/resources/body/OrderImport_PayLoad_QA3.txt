@@ -1,0 +1,130 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:bof="http://www.productpartners.com/BOF">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <BOF ref="<orderReferenceNumber>" origin="TBB WEB" date="2019-05-23T11:14:32.665-07:00" xmlns="http://www.productpartners.com/BOF" xmlns:ns2="http://www.productpartners.com/response" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+         <OrderList>
+            <CorrelationId><orderReferenceNumber></CorrelationId>
+            <Order>
+               <CustomerInfo>
+                  <GUID><guid></GUID>
+                  <CustomerNo><customerNumber></CustomerNo>
+                  <CustomerType>CLUB</CustomerType>
+                  <GNCID>
+                     <GNCCustomerID><gncCustomerID></GNCCustomerID>
+                  </GNCID>
+                  <GNCSponsorID><gncSponsorID></GNCSponsorID>
+                  <FirstName>fncekmdvnl</FirstName>
+                  <LastName>lnpihkafja</LastName>
+                  <BillTo>
+                     <Address1>3301 Exposition Blvd</Address1>
+                     <Address2/>
+                     <City>Santa Monica</City>
+                     <County/>
+                     <State>CA</State>
+                     <PostalCode>90404</PostalCode>
+                     <CountryCode>US</CountryCode>
+                  </BillTo>
+                  <CommunicationList>
+                     <Communication type="GEN" purpose="DAY_PHONE" value="12323232323"/>
+                     <Communication type="EMAIL" value="<email>"/>
+                  </CommunicationList>
+                  <AdditionalInfo/>
+               </CustomerInfo>
+               <OrderInfo>
+                  <OrderNumber><orderReferenceNumber></OrderNumber>
+                  <BusinessUnit>NETWORK</BusinessUnit>
+                  <OrderDateTime>2019-05-23T14:14:03.222-04:00</OrderDateTime>
+                  <OfferCode>2019-MAR01-APR01-US-CL-SALE</OfferCode>
+                  <OrderType>WEB ORDER_NT</OrderType>
+                  <ShipMethodCode>FedEx SmartPost</ShipMethodCode>
+                  <OrderSubTotal>144.00</OrderSubTotal>
+                  <OrderSHAmount>2.00</OrderSHAmount>
+                  <TaxRate>0</TaxRate>
+                  <TotalTaxAmount>14.97</TotalTaxAmount>
+                  <PersonalUse>Y</PersonalUse>
+                  <PriceSuppression>N</PriceSuppression>
+                  <ZeroOutShakelogyFlag>0</ZeroOutShakelogyFlag>
+                  <ReferenceCode>143489351242</ReferenceCode>
+                  <AdditionalOrderInfo>
+                     <IpAddress>199.187.237.70</IpAddress>
+                     <SessionID>qPJeGPwPv5_9ae2YZ2vRyIC4S-KVe0EMea5p954M</SessionID>
+                  </AdditionalOrderInfo>
+               </OrderInfo>
+               <PaymentInfo>
+                  <PaymentPlanCode>1 Pay</PaymentPlanCode>
+                  <PaymentMethod>CREDIT_CARD</PaymentMethod>
+                  <CCType>VISA</CCType>
+                  <CCNo>9440939617884448</CCNo>
+                  <HolderNameOnCC>fncekmdvnl lnpihkafja</HolderNameOnCC>
+                  <ExpDate>2023-05-28</ExpDate>
+                  <AuthCode>PPS610</AuthCode>
+                  <CurrencyCode>USD</CurrencyCode>
+               </PaymentInfo>
+               <ShipTo>
+                  <FirstName>fncekmdvnl</FirstName>
+                  <LastName>lnpihkafja</LastName>
+                  <AddressInfo>
+                     <Address1>3301 Exposition Blvd</Address1>
+                     <Address2 xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                     <City>Santa Monica</City>
+                     <County xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                     <State>CA</State>
+                     <PostalCode>90404</PostalCode>
+                     <CountryCode>US</CountryCode>
+                  </AddressInfo>
+                  <CommunicationList>
+                     <Communication type="GEN" purpose="DAY_PHONE" value="12323232323"/>
+                  </CommunicationList>
+               </ShipTo>
+               <LineItemList>
+                  <LineItem>
+                     <LineNum>1</LineNum>
+                     <OfferCode>2019-MAR01-APR01-US-CL-SALE</OfferCode>
+                     <ItemNumber>MDBCPPY</ItemNumber>
+                     <OriginalPrice>160.00</OriginalPrice>
+                     <RetailPrice>160.00</RetailPrice>
+                     <Commissions>50.0</Commissions>
+                     <SubscriptionCommissions>0.0</SubscriptionCommissions>
+                     <CV>45.00</CV>
+                     <PV>135.00</PV>
+                     <Qty>1</Qty>
+                     <UOM>EA</UOM>
+                     <FastStartAmount>0</FastStartAmount>
+                     <HDTriggerFlag>1</HDTriggerFlag>
+                     <ItemPrice>144.00</ItemPrice>
+                     <ItemPaymentPlanCode>1 Pay</ItemPaymentPlanCode>
+                     <LineReference>ci5235000403</LineReference>
+                     <LineAdjustments>
+                        <LineAdjustmentInfo>
+                           <AdjustmentType>PROMO_CODE_DISCOUNT</AdjustmentType>
+                           <PromoCode>10OFFALL</PromoCode>
+                           <PromotionID>promo630004</PromotionID>
+                           <DiscountAmount>16.0</DiscountAmount>
+                           <PromoCodeDesc>NONE</PromoCodeDesc>
+                        </LineAdjustmentInfo>
+                     </LineAdjustments>
+                  </LineItem>
+                  <LineItem>
+                     <LineNum>1002</LineNum>
+                     <OfferCode>2019-MAR01-APR01-US-CL-SALE</OfferCode>
+                     <ItemNumber>MDSUSH31216HD</ItemNumber>
+                     <OriginalPrice>0</OriginalPrice>
+                     <RetailPrice>0</RetailPrice>
+                     <Commissions>0</Commissions>
+                     <SubscriptionCommissions>0</SubscriptionCommissions>
+                     <CV>0</CV>
+                     <PV>0</PV>
+                     <Qty>1</Qty>
+                     <UOM>EA</UOM>
+                     <FastStartAmount>0</FastStartAmount>
+                     <HDTriggerFlag>0</HDTriggerFlag>
+                     <ItemPrice>0</ItemPrice>
+                     <ItemPaymentPlanCode>1 Pay</ItemPaymentPlanCode>
+                     <TopModelLineReference>ci5235000403</TopModelLineReference>
+                  </LineItem>
+               </LineItemList>
+            </Order>
+         </OrderList>
+      </BOF>
+   </soapenv:Body>
+</soapenv:Envelope>

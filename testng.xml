@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test name="Test1"  >
+    <!--Driver type, Make sure to choose one of this (Sauce/Grid/Local)  don't choose whatever you need -->
+    <parameter name="driverType" value="Local" />
+    <!-- App Related Properties -->
+    <parameter name="locale" value="en_US" />
+    <parameter name="tunnel" value="yes" />
+    <parameter name="environment" value="QA3" />
+    <!-- Browser Related Properties -->
+    <!-- Should be one of the browser (chrome/safari/firefox/iexplorer/edge-->
+    <parameter name="browser" value="firefox" />
+    <parameter name="browserVersion" value="latest" />
+    <parameter name="browserPlatform" value="Windows 10" />
+    <!-- Mobile Related Properties -->
+    <parameter name="isMobile" value="false"/>
+    <parameter name="mobileDeviceName" value="Samsung galaxy S9 Plus FHD GoogleAPI Emulator" />
+    <parameter name="mobileDeviceOrientation" value="portrait" />
+    <parameter name="mobilePlatformVersion" value="7.1" />
+    <parameter name="mobilePlatformName" value="Android" />
+    <parameter name="mobileBrowser" value="chrome" />
+    <!-- Test case to run -->
+    <classes>
+      <class name="com.qentelli.automation.runners.DefaultRunner"/>
+    </classes>
+  </test>
+  <!-- <test name="Test2"  >
+    <parameter name="browser" value="chrome" />
+    <parameter name="browserVersion" value="75" />
+    <parameter name="browserPlatform" value="Windows 10" />
+    <parameter name="locale" value="US_en" />
+    <parameter name="tunnel" value="yes" />
+    <parameter name="driverType" value="sauce" />
+    <parameter name="platform" value="windows" />
+    <parameter name="platformversion" value="10" />
+    <classes>
+      <class name="com.qentelliautomation.runners.DefaultRunner2"/>
+    </classes>
+  </test>
+ <test name="Test3"  >g
+    <parameter name="browser" value="safari" />
+    <parameter name="browserVersion" value="12" />
+    <parameter name="browserPlatform" value="macOS 10.13" />
+    <parameter name="locale" value="US_en" />
+    <parameter name="tunnel" value="yes" />
+    <parameter name="driverType" value="sauce" />
+    <parameter name="platform" value="windows" />
+    <parameter name="platformversion" value="10" />
+    <classes>
+      <class name="com.qentelliautomation.runners.DefaultRunner3"/>
+    </classes>
+  </test>
+ <test name="Test4"  >
+    <parameter name="browser" value="iexplore" />
+    <parameter name="browserVersion" value="11" />
+    <parameter name="browserPlatform" value="Windows 10" />
+    <parameter name="locale" value="US_en" />
+    <parameter name="tunnel" value="yes" />
+    <parameter name="driverType" value="sauce" />
+    <parameter name="platform" value="windows" />
+    <parameter name="platformversion" value="10" />
+    <classes>
+      <class name="com.qentelliautomation.runners.DefaultRunner4"/>
+    </classes>
+  </test>
+ -->
+</suite>

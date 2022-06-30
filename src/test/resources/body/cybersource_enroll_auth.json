@@ -1,0 +1,47 @@
+{
+    "clientReferenceInformation":
+    {
+        "code":"STORE_246310007"},"processingInformation":
+        {"actionList":["CONSUMER_AUTHENTICATION"],
+        "authorizationOptions":
+        {
+            "initiator":
+            {
+                "credentialStoredOnFile": true
+            }
+        }
+    },"paymentInformation":
+    {
+        "card":
+        {
+            "expirationMonth":"04",
+            "expirationYear":"2023"
+            },
+            "instrumentIdentifier":
+            {
+                "id":"7010000000013831096"
+        }
+    },"orderInformation":
+    {
+        "amountDetails":
+        {
+            "totalAmount":"108.29",
+            "currency":"GBP"
+        },
+        "billTo":
+            {
+                "firstName":"asdad",
+                "lastName":"asdad",
+                "address1":"9 Church Street",
+                "locality":"DUNDEE",
+                "administrativeArea":"GB",
+                "postalCode":"DD92 9EJ",
+                "country":"GB",
+                "email":"testing.vasanth12131@yopmail.com",
+                "phoneNumber":"441234567890"
+            }
+        },"consumerAuthenticationInformation":{
+            "referenceId":"7b16d7cc-6bab-4306-85c4-43b5932cc9c0",
+            "returnUrl":"https://www-tbbqa.test.com/shop/gb/checkout/stepUpCompletion.jsp"
+            }
+}
