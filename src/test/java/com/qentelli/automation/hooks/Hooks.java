@@ -1,9 +1,12 @@
 package com.qentelli.automation.hooks;
 
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.lang.reflect.Field;
+import java.nio.charset.StandardCharsets;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -18,6 +21,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
+import javax.imageio.ImageIO;
+
+import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang.StringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -25,6 +31,8 @@ import org.apache.logging.log4j.core.config.Configurator;
 import org.influxdb.dto.Point;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Reporter;
@@ -48,6 +56,8 @@ import cucumber.api.java.After;
 import cucumber.api.java.AfterStep;
 import cucumber.api.java.Before;
 import cucumber.api.java.BeforeStep;
+import ru.yandex.qatools.ashot.AShot;
+import ru.yandex.qatools.ashot.shooting.ShootingStrategies;
 
 public class Hooks {
 	static Logger logger = LogManager.getLogger(Hooks.class);
@@ -270,62 +280,62 @@ public class Hooks {
 	}
 
 	public void embedScreenshot(Scenario scenario) {
-//		if (this.world.driver == null) {
-//			logger.error("Sauce is null");
-//			return;
-//		}
-//		if (scenario.isFailed()) {
-//			byte[] screenshot = null;
-//			List<String> scenarioFailed = world.getSauceWebLink();
-//
-//			try {
-//				if (this.world.driver != null) {
-//					screenshot = takeFullPageScreenshot(scenario, this.world.driver);
-//				}
-//				if (this.world.ieDriver != null) {
-//					screenshot = ((TakesScreenshot) this.world.ieDriver).getScreenshotAs(OutputType.BYTES);
-//					scenario.embed(screenshot, "image/png");
-//					logger.info("Screen shot\t" + screenshot.length);
-//				}
-//				RuntimeSingleton.getInstance().scenarios.get(ID).screenshot = screenshot;
-//
-//				for (String links : scenarioFailed) {
-//					scenario.embed(links.getBytes(StandardCharsets.UTF_8), "text/html");
-//				}
-//				// Capture and embed screenshot for EBS if its available
-//				File screen = new File("OATS/DataBank/screenshot.png");
-//				if (screen.exists()) {
-//					byte[] fileContent = FileUtils.readFileToByteArray(screen);
-//					scenario.embed(fileContent, "image/png");
-//
-//				}
-//				if (world.getSauceRest() != null)
-//					world.getSauceRest().jobFailed(world.getSessionId());
-//			} catch (Exception e) {
-//				logger.info("Exception thrown while attaching screenshot");
-//				e.printStackTrace();
-//			}
+		if (this.world.driver == null) {
+			logger.error("Sauce is null");
+			return;
 		}
-//		if (scenario.getStatus().toString().equalsIgnoreCase("PASSED") && world.getSauceRest() != null
-//				&& world.getSessionId() != null) {
-//			List<String> scenarioPassed = world.getSauceWebLink();
-//			for (String links : scenarioPassed) {
-//				scenario.embed(links.getBytes(StandardCharsets.UTF_8), "text/html");
-//			}
-//			world.getSauceRest().jobPassed(world.getSessionId());
-//		}
-//	}
+		if (scenario.isFailed()) {
+			byte[] screenshot = null;
+			List<String> scenarioFailed = world.getSauceWebLink();
+
+			try {
+				if (this.world.driver != null) {
+					screenshot = takeFullPageScreenshot(scenario, this.world.driver);
+				}
+				if (this.world.ieDriver != null) {
+					screenshot = ((TakesScreenshot) this.world.ieDriver).getScreenshotAs(OutputType.BYTES);
+					scenario.embed(screenshot, "image/png");
+					logger.info("Screen shot\t" + screenshot.length);
+				}
+				RuntimeSingleton.getInstance().scenarios.get(ID).screenshot = screenshot;
+
+				for (String links : scenarioFailed) {
+					scenario.embed(links.getBytes(StandardCharsets.UTF_8), "text/html");
+				}
+				// Capture and embed screenshot for EBS if its available
+				File screen = new File("OATS/DataBank/screenshot.png");
+				if (screen.exists()) {
+					byte[] fileContent = FileUtils.readFileToByteArray(screen);
+					scenario.embed(fileContent, "image/png");
+
+				}
+				if (world.getSauceRest() != null)
+					world.getSauceRest().jobFailed(world.getSessionId());
+			} catch (Exception e) {
+				logger.info("Exception thrown while attaching screenshot");
+				e.printStackTrace();
+			}
+		}
+		if (scenario.getStatus().toString().equalsIgnoreCase("PASSED") && world.getSauceRest() != null
+				&& world.getSessionId() != null) {
+			List<String> scenarioPassed = world.getSauceWebLink();
+			for (String links : scenarioPassed) {
+				scenario.embed(links.getBytes(StandardCharsets.UTF_8), "text/html");
+			}
+			world.getSauceRest().jobPassed(world.getSessionId());
+		}
+	}
 
 	private byte[] takeFullPageScreenshot(Scenario scenario, WebDriver driver) throws IOException {
 		byte[] output = null;
-//		ByteArrayOutputStream bi = new ByteArrayOutputStream();
-//		BufferedImage screenshot = new AShot().shootingStrategy(ShootingStrategies.viewportPasting(1000))
-//				.takeScreenshot(driver).getImage();
-//		ImageIO.write(screenshot, "jpg", bi);
-//		bi.flush();
-//		output = bi.toByteArray();
-//		bi.close();
-//		scenario.embed(output, "image/png");
+		ByteArrayOutputStream bi = new ByteArrayOutputStream();
+		BufferedImage screenshot = new AShot().shootingStrategy(ShootingStrategies.viewportPasting(1000))
+				.takeScreenshot(driver).getImage();
+		ImageIO.write(screenshot, "jpg", bi);
+		bi.flush();
+		output = bi.toByteArray();
+		bi.close();
+		scenario.embed(output, "image/png");
 		return output;
 	}
 
